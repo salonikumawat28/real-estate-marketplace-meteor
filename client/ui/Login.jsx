@@ -28,19 +28,23 @@ export const Login= () => {
     }
 
     return (
-        <div>
+        <div class="color  rounded mx-5 my-5">
             {showSignup ? (<SignUp />) : (
-                <div>
-                    <form className="login-form" onSubmit={onLoginFormSubmit}>
-                        <div>
-                            <input type="text" placeholder="Email" required onChange={onEmailChange} value={email}></input>
-                            <input type="password" placeholder="Password" required onChange={onPasswordChange} value={password}></input>
-                        </div>
-                        <div>
-                            <button name="login-button" type="submit">Login</button>
-                        </div>
-                    </form>
-                    <button name="signUp-button" type="button" onClick={signUp}>Sign Up</button>
+                <div class="p-5">
+                    <div>
+                        <form action="/action_page.php" onSubmit={onLoginFormSubmit}>
+                            <div class="mb-3 my-3 mx-5">
+                                <input type="text" class="form-control" placeholder="Email" required onChange={onEmailChange} value={email}></input>
+                            </div>
+                            <div class="mb-3 mx-5">
+                                <input type="password" class="form-control" placeholder="Password" required onChange={onPasswordChange} value={password}></input>
+                            </div>
+                            <div class="mx-5">
+                                <button name="login-button" type="submit" className="btn btn-primary active btn-lg btn-block ">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                    <button name="signUp-button" class="btn btn-success mx-5 mt-3 mb-3" type="button" onClick={signUp}>Create New Account</button>
                 </div>
             )}
         </div>
