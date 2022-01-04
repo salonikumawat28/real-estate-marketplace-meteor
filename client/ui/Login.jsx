@@ -33,7 +33,7 @@ export const Login= () => {
                 <div class="p-5">
                     <div>
                         <form action="/action_page.php" onSubmit={onLoginFormSubmit}>
-                            <div class="mb-3 my-3 mx-5">
+                            <div class="text-center mb-3 my-3 mx-5">
                                 <input type="text" class="form-control" placeholder="Email" required onChange={onEmailChange} value={email}></input>
                             </div>
                             <div class="mb-3 mx-5">
