@@ -10,19 +10,27 @@ export const Home = () => {
         event.preventDefault();
         setShowAddProperty(true);
     }
+
+    const viewProperty = (event) => {
+        event.preventDefault();
+        setShowAddProperty(false);
+    }
     return (
         <div>
+            <nav className="navbar navbar-expand-sm bg-navbar navbar-dark navbar-top">
+                <div className="container-fluid">
+                    <button type="button" className="btn btn-success" onClick={addProperty} >Add RealEstate</button>
+                    <button type="button" className="btn btn-success mx-5" onClick={viewProperty}>View RealEstate</button>
+                    <Logout/>
+                    
+                </div>
+            </nav>
+
             {showAddProperty ? (<RealEstateForm/>) : (
                 <div>
-                    <nav className="navbar navbar-expand-sm bg-navbar navbar-dark navbar-top">
                     <div className="container-fluid">
-                        <button type="button" className="btn btn-success" type="button" onClick={addProperty} >Add property</button>
-                        <Logout/>
-                    
-                    </div>
-                    </nav>
-                    <div className="container-fluid">
-                        <h3>Welcome !!</h3>
+                    <h3>Welcome !! All your advertisements are here......</h3>
+
                     </div>
                 </div>
             )}  
