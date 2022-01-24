@@ -1,7 +1,7 @@
 import { Accounts } from 'meteor/accounts-base';
 import { ProfileCollection } from '../common/profileCollection';
 
-const userExists = (email) => Accounts.findUserByEmail(email);
+export const userExists = (email) => Accounts.findUserByEmail(email);
 
 const getUser = (email) => {
     return Accounts.findUserByEmail(email);

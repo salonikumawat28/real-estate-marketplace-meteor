@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createUser } from "../../client/db/users";
-import { isEmailValid, isPasswordSame } from "../utils/validation";
-import { App } from './App';
+import { isEmailValid } from "../utils/validation";
+import { Login } from './Login';
 
 
 export const SignUp = () => {
@@ -11,6 +11,7 @@ export const SignUp = () => {
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
     const[confirmPassword, setConfirmPassword] = useState('');
+    const [showLogin, setShowLogin] = useState(false);
 
     const onFirstNameChange = (event) => {
         event.preventDefault();
@@ -43,14 +44,16 @@ export const SignUp = () => {
         if(password !== confirmPassword) alert("Passwords are different");
         else {
             createUser(firstName, lastName, email, password);
+            setShowLogin(true);
         }
-        
     }
 
 
     return (
-         <div className="signup-form">
-            <form className="needs-validation" action="/examples/actions/confirmation.php" method="post" onSubmit={signUpSubmit}>
+        <div>
+            {showLogin ? (<Login/>) : (
+            <div className="signUp-form">
+                <form className="needs-validation" action="/examples/actions/confirmation.php" method="post" onSubmit={signUpSubmit}>
                 <h2>Create an Account</h2>
                 <p className="hint-text">Sign up with your social media account or email address</p>
                 <div className="social-btn">
@@ -77,6 +80,13 @@ export const SignUp = () => {
                     <button type="submit" className="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
                 </div>
             </form>
+            </div>
+            )}
+
         </div>
+        
+            
+            
+        
     );
 }

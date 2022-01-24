@@ -1,5 +1,5 @@
 import { user1 } from "../constant";
-import { createUser } from './users';
+import { createUser, userExists } from './users';
 
 const createTestUser = () => {
     createUser(user1.firstName, user1.lastName, user1.email, user1.password);

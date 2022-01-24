@@ -40,7 +40,7 @@ export const Login= () => {
                                 <input type="password" className="form-control" placeholder="Password" required onChange={onPasswordChange} value={password}></input>
                             </div>
                             <div className="mx-5">
-                                <button name="login-button" type="submit" className="btn btn-primary active btn-lg btn-block ">Log In</button>
+                                <button name="login-button" type="submit" className="btn btn-primary active btn-lg btn-block ">Log in</button>
                             </div>
                         </form>
                     </div>
